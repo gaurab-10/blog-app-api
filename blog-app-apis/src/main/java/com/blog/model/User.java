@@ -1,7 +1,6 @@
 package com.blog.model;
 
 import java.time.LocalDateTime;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -28,13 +27,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 public class User implements UserDetails {
 
@@ -58,7 +59,7 @@ public class User implements UserDetails {
 	@JsonIgnore
 	private List<Comment> comments = new ArrayList<>();
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "id"))
 	private Set<Role> roles = new HashSet<>();
 
@@ -112,5 +113,13 @@ public class User implements UserDetails {
 	public void setRole(Role role) {
 		roles.add(role);
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password
+				+ ", createdTimeStamp=" + createdTimeStamp + ", about=" + about + "]";
+	}
+	
+	
 
 }

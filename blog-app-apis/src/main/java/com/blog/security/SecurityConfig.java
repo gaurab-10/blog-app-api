@@ -48,7 +48,6 @@ public class SecurityConfig {
 
 		http.csrf().disable().authorizeRequests()
 				.antMatchers("/api/**").hasRole("NORMAL")
-				//.antMatchers("/v3/api-docs").permitAll()
 				.antMatchers("/**").permitAll()
 				.anyRequest().authenticated().and()
 				.exceptionHandling().authenticationEntryPoint(this.entryPoint)

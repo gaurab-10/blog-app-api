@@ -22,13 +22,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity 
-@Table(name="posts")
+@Entity
+@Table(name = "posts")
 public class Post {
 
 	@Id
@@ -38,23 +41,29 @@ public class Post {
 	private String title;
 
 	private String content;
-	
+
 	private String image;
-	
-	@OneToOne(fetch=FetchType.LAZY)
+
+	@OneToOne(fetch = FetchType.LAZY)
 	private User user;
-	
+
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
 	@JsonIgnore // it wont be applied if the DTO class is used to send as the response entity
 	private List<Comment> comments = new ArrayList<>();
-	
+
 	@OneToOne
-	@JoinColumn(name="cat_id")
-	private Category category; 
-	
+	@JoinColumn(name = "cat_id")
+	private Category category;
+
 	@CreationTimestamp
 	private LocalDateTime createdTime;
-	
+
 	@UpdateTimestamp
 	private LocalDateTime updateTime;
+
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", title=" + title + ", content=" + content + ", image=" + image
+				+ ", createdTime=" + createdTime + ", updateTime=" + updateTime + "]";
+	}
 }
