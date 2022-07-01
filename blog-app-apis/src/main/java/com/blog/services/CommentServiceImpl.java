@@ -15,6 +15,7 @@ import com.blog.payloads.CommentDto;
 import com.blog.repositories.CommentRepo;
 import com.blog.repositories.PostRepo;
 import com.blog.repositories.UserRepo;
+import com.blog.services.interfaces.CommentService;
 
 
 

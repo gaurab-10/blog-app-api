@@ -27,8 +27,8 @@ import com.blog.config.AppConstants;
 import com.blog.payloads.ApiResponse;
 import com.blog.payloads.PostDto;
 import com.blog.payloads.PostResponse;
-import com.blog.services.FileService;
-import com.blog.services.PostService;
+import com.blog.services.interfaces.FileService;
+import com.blog.services.interfaces.PostService;
 
 @RestController
 @RequestMapping(value = "/api/posts")

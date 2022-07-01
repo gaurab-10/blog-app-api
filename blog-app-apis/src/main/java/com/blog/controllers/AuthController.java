@@ -20,7 +20,7 @@ import com.blog.exceptions.ApiException;
 import com.blog.payloads.JwtRequest;
 import com.blog.payloads.JwtResponse;
 import com.blog.payloads.UserDto;
-import com.blog.services.UserService;
+import com.blog.services.interfaces.UserService;
 import com.blog.utils.JwtUtil;
 
 @RestController

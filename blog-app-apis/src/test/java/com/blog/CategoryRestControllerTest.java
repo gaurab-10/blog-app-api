@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.blog.controllers.CategoryController;
-import com.blog.services.CategoryService;
+import com.blog.services.interfaces.CategoryService;
 
 import lombok.extern.slf4j.Slf4j;
 

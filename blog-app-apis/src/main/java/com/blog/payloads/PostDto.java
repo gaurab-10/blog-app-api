@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotEmpty;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -17,8 +19,10 @@ public class PostDto {
 	
 	private int id;
 
+	@NotEmpty
 	private String title;
 
+	@NotEmpty
 	private String content;
 
 	private String image;

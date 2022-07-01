@@ -20,6 +20,7 @@ import com.blog.payloads.PostResponse;
 import com.blog.repositories.CategoryRepo;
 import com.blog.repositories.PostRepo;
 import com.blog.repositories.UserRepo;
+import com.blog.services.interfaces.PostService;
 
 @Service
 public class PostServiceImpl implements PostService {

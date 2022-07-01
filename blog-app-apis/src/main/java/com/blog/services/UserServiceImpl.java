@@ -17,12 +17,10 @@ import com.blog.model.User;
 import com.blog.payloads.UserDto;
 import com.blog.repositories.RoleRepo;
 import com.blog.repositories.UserRepo;
+import com.blog.services.interfaces.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
-
-	@Autowired
-	private UserRepo userRepo;
 
 	@Autowired
 	private RoleRepo roleRepo;
@@ -32,6 +30,13 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
+	private UserRepo userRepo;
+
+	@Autowired
+	public UserServiceImpl(UserRepo userRepo) {
+		this.userRepo = userRepo;
+	}
 
 	@Override
 	public UserDto createUser(UserDto userdto) {
@@ -107,10 +112,10 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		Role role1 = roleRepo.getReferenceById(5001);
 		Role role = roleRepo.getReferenceById(5002);
-		//user.getRoles().add(role);
+		// user.getRoles().add(role);
 
-		 user.setRole(role1);
-		 user.setRole(role);
+		user.setRole(role1);
+		user.setRole(role);
 		return modelMapper.map(this.userRepo.save(user), UserDto.class);
 	}
 

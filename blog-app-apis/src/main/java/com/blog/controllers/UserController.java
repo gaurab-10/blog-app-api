@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.blog.payloads.ApiResponse;
 import com.blog.payloads.UserDto;
-import com.blog.services.UserService;
+import com.blog.services.interfaces.UserService;
 
 @RestController
 @RequestMapping(value = "/api/users")

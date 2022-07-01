@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blog.payloads.CategoryDto;
-import com.blog.services.CategoryService;
+import com.blog.services.interfaces.CategoryService;
 
 @RestController
 @RequestMapping(value = "/api/categories")

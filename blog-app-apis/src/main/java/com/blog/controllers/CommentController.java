@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.blog.payloads.ApiResponse;
 import com.blog.payloads.CommentDto;
-import com.blog.services.CommentService;
+import com.blog.services.interfaces.CommentService;
 
 @RestController
 @RequestMapping(value = "api/comment")

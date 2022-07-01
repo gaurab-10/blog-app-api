@@ -1,5 +1,7 @@
 package com.blog.payloads;
 
+import javax.validation.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,11 +13,10 @@ public class CommentDto {
 
 	private int id;
 
-	
+	@NotEmpty
 	private String content;
 
-	//private PostDto post;
-
+	@NotEmpty
 	private UserDto user;
 
 }

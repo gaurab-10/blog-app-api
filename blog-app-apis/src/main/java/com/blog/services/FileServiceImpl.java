@@ -13,6 +13,8 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.blog.services.interfaces.FileService;
+
 import ch.qos.logback.classic.Logger;
 import lombok.extern.slf4j.Slf4j;
 

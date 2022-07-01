@@ -11,6 +11,7 @@ import com.blog.exceptions.ResourceNotFoundException;
 import com.blog.model.Category;
 import com.blog.payloads.CategoryDto;
 import com.blog.repositories.CategoryRepo;
+import com.blog.services.interfaces.CategoryService;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
